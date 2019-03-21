@@ -8,6 +8,7 @@ class MyTestCase(unittest.TestCase):
         self.url = url + "/activity-h5/get-code"
 
     def test_1(self):
+        """手机号码为空"""
         datas['mobile'] = ''
         res = requests.post(url=self.url, data=datas)
         print(res.text)

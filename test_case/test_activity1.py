@@ -8,6 +8,7 @@ class MyTestCase(unittest.TestCase):
         self.url = url + "/activity/get-gift"
 
     def test_1(self):
+        """未预约用户"""
         datas['key'] = 'jxb_book '
         res = requests.post(url=self.url, data=datas)
         print(res.text)
