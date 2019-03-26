@@ -8,7 +8,17 @@ class MyTestCase(unittest.TestCase):
         self.url = url + "/book/save-data-db"
 
     def test_1(self):
+        """正确传参"""
         datas['bookId'] = 1548763637327
+        datas['cate'] = ''
+        datas['data'] = {}
+        res = requests.post(url=self.url, data=datas)
+        print(res.text)
+        self.assertTrue(u"" in res.text)
+
+    def test_2(self):
+        """参数为空"""
+        datas['bookId'] = ''
         datas['cate'] = ''
         datas['data'] = {}
         res = requests.post(url=self.url, data=datas)
