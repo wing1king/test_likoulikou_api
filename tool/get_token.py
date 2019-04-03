@@ -11,7 +11,7 @@ url = "http://192.168.143.21:8055/v1"
 # 测试环境
 # url = "http://10.72.12.43:8055/v1"
 
-
+# 获取taccess_token
 def get_token():
     data = {
             'openid': '164b4571e4542ca8f2cc19776f7fd2f211111',

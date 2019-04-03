@@ -15,7 +15,7 @@ if __name__ == "__main__":
     now = time.strftime("%Y-%m-%d %H-%M-%S")
 
     # 定义报告存放路径
-    filename = r'D:\test_api1\report\\' + now + '_test_teacher_result.html'
+    filename = r'D:\test_api1\test_report\\' + now + '_test_teacher_result.html'
 
     fp = open(filename, "wb")
     # 定义测试报告
