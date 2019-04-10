@@ -9,13 +9,13 @@ class MyTestCase(unittest.TestCase):
 
     def test_1(self):
         datas['gameId'] = get_gameId()
-        datas['chapterId'] = ''
-        datas['optionType'] = ''
-        datas['optionId'] = ''
-        datas['type'] = ''
+        datas['chapterId'] = '1538998937488'
+        datas['optionType'] = 'fed4d9f4-b042-4225-bb62-745bff4dea08'
+        datas['optionId'] = 'qqqq'
+        datas['type'] = 'VCKEY'
         res = requests.post(url=self.url, data=datas)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"操作成功" in res.text)
 
     def tearDown(self):
         time.sleep(1)
