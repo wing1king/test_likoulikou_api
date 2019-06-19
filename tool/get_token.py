@@ -7,9 +7,9 @@ import time
 from ddt import *
 
 # 开发环境
-url = "http://192.168.143.21:8055/v1"
+# url = "http://10.72.12.19:8055/v1"
 # 测试环境
-# url = "http://10.72.12.43:8055/v1"
+url = "http://10.72.12.43:8989"
 
 # 获取taccess_token
 def get_token():
@@ -150,7 +150,6 @@ def get_book_id():
     mycol = mydb['games']
     x = mycol.find_one()
     return x['id']
-
 
 
 

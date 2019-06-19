@@ -2,14 +2,13 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """兑换接口"""
+    """删除角色"""
 
     def setUp(self):
-        self.url = url + "/pay/exchange"
+        self.url = url + ""
 
     def test_1(self):
-        datas['id'] = 2
-        res = requests.post(url=self.url, data=datas)
+        res = requests.post(url=self.url)
         print(res.text)
         self.assertTrue(u"" in res.text)
 

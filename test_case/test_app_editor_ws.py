@@ -2,15 +2,17 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """我的游戏收藏"""
+    """websocket链接"""
 
     def setUp(self):
-        self.url = url + "/user/collect"
+        self.url = url + "/app/editor/ws"
 
     def test_1(self):
-        res = requests.post(url=self.url, data=datas)
+        datas['book_id'] = ''
+        datas['chapter_id'] = ''
+        res = requests.get(url=self.url, params=datas)
         print(res.text)
-        self.assertTrue(u"操作成功" in res.text)
+        self.assertTrue(u"" in res.text)
 
     def tearDown(self):
         time.sleep(1)

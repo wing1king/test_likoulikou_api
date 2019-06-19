@@ -2,15 +2,16 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """金句收藏总数"""
+    """上传文件"""
 
     def setUp(self):
-        self.url = url + "/golden-sentences/get-collect-count"
+        self.url = url + "/app/upload"
 
     def test_1(self):
-        res = requests.post(url=self.url, data=datas)
+        datas['file'] = ''
+        res = requests.post(url=self.url)
         print(res.text)
-        self.assertTrue(u"操作成功" in res.text)
+        self.assertTrue(u"" in res.text)
 
     def tearDown(self):
         time.sleep(1)

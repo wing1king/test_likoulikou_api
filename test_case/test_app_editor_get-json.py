@@ -2,17 +2,15 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """扣费"""
+    """获取预览的json"""
 
     def setUp(self):
-        self.url = url + "/game/dedult"
+        self.url = url + "/app/editor/get-json"
 
     def test_1(self):
-        datas['gameId'] = get_gameId()
-        datas['type'] = ''
-        datas['number'] = ''
-        datas['mark'] = ''
-        res = requests.post(url=self.url, data=datas)
+        datas['book_id'] = ''
+        datas['chapter_id'] = ''
+        res = requests.get(url=self.url, params=datas)
         print(res.text)
         self.assertTrue(u"" in res.text)
 

@@ -2,15 +2,16 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """ 领取活动礼包"""
+    """修改角色"""
 
     def setUp(self):
-        self.url = url + "/activity/get-gift"
+        self.url = url + "/app/editor/edit-character"
 
     def test_1(self):
-        """未预约用户"""
-        datas['key'] = 'jxb_book '
-        res = requests.post(url=self.url, data=datas)
+        datas['book_id'] = ''
+        datas['icon'] = ''
+        datas['name'] = ''
+        res = requests.post(url=self.url)
         print(res.text)
         self.assertTrue(u"" in res.text)
 

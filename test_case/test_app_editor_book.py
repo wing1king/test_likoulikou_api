@@ -2,16 +2,16 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """获取状态"""
+    """编辑器书本信息"""
 
     def setUp(self):
-        self.url = url + "/play/get-game-states"
+        self.url = url + "/app/editor/book"
 
     def test_1(self):
-        datas['gameId'] = get_gameId()
-        res = requests.post(url=self.url, data=datas)
+        datas['book_id']
+        res = requests.get(url=self.url, params=datas)
         print(res.text)
-        self.assertTrue(u"操作成功" in res.text)
+        self.assertTrue(u"" in res.text)
 
     def tearDown(self):
         time.sleep(1)

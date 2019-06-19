@@ -2,14 +2,17 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """我的作品--章节列表"""
+    """添加角色"""
 
     def setUp(self):
-        self.url = url + "/my-books/chapter-list"
+        self.url = url + "/app/editor/add-character"
 
     def test_1(self):
-        datas['bookId'] = '123124'
-        res = requests.post(url=self.url, data=datas)
+        datas['book_id'] = ''
+        datas['icon'] = ''
+        datas['name'] = ''
+        datas['align'] = ''
+        res = requests.post(url=self.url)
         print(res.text)
         self.assertTrue(u"" in res.text)
 
