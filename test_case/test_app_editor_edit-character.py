@@ -8,10 +8,8 @@ class MyTestCase(unittest.TestCase):
         self.url = url + "/app/editor/edit-character"
 
     def test_1(self):
-        datas['book_id'] = ''
-        datas['icon'] = ''
-        datas['name'] = ''
-        res = requests.post(url=self.url)
+        data = {'book_id': '', 'icon': '', 'name': ''}
+        res = requests.post(url=self.url, json=data)
         print(res.text)
         self.assertTrue(u"" in res.text)
 

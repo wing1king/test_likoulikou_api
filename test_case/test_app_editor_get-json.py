@@ -8,9 +8,8 @@ class MyTestCase(unittest.TestCase):
         self.url = url + "/app/editor/get-json"
 
     def test_1(self):
-        datas['book_id'] = ''
-        datas['chapter_id'] = ''
-        res = requests.get(url=self.url, params=datas)
+        data = {'book_id': '', 'chapter_id': ''}
+        res = requests.get(url=self.url, params=data)
         print(res.text)
         self.assertTrue(u"" in res.text)
 

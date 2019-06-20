@@ -1,6 +1,5 @@
 from tool.get_token import *
 
-
 class MyTestCase(unittest.TestCase):
     """角色列表"""
 
@@ -8,10 +7,10 @@ class MyTestCase(unittest.TestCase):
         self.url = url + "/app/editor/characters"
 
     def test_1(self):
-        datas['book_id'] = ''
-        res = requests.get(url=self.url, params=datas)
+        data = {'book_id':1559790158063}
+        res = requests.get(url=self.url, params=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def tearDown(self):
         time.sleep(1)
