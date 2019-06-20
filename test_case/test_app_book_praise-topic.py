@@ -2,14 +2,14 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """上传文件"""
+    """评论点赞"""
 
     def setUp(self):
-        self.url = url + "/app/upload"
+        self.url = url + "/app/book/praise-topic"
 
     def test_1(self):
-        files = {'file': open(r'E:/banner5.png', 'rb')}
-        res = requests.post(url=self.url, files=files)
+        data = {'bookid': '', 'topicId': '', 'type': 1}
+        res = requests.post(url=self.url, json=data)
         print(res.text)
         self.assertTrue(u"" in res.text)
 
