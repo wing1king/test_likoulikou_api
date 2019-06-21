@@ -8,7 +8,11 @@ class MyTestCase(unittest.TestCase):
         self.url = url + "/app/book/praise-topic"
 
     def test_1(self):
-        data = {'bookid': '', 'topicId': '', 'type': 1}
+        data = {
+            'bookid': '',
+            'topicId': '',
+            'type': ''  # 1:点赞，2：取消点赞
+        }
         res = requests.post(url=self.url, json=data)
         print(res.text)
         self.assertTrue(u"" in res.text)

@@ -1,19 +1,19 @@
 from tool.get_token import *
 
+
 class MyTestCase(unittest.TestCase):
-    """评论和回复"""
+    """评论回复"""
 
     def setUp(self):
-        self.url = url + "/app/book/comment-topic"
+        self.url = url + "/app/book/comment-reply-add"
 
     def test_1(self):
         data = {
-            'topicId': '',
+            'comment_id': '',
             'book_id': '',
             'content': '',
-            'replyToTopicUserId': '',
-            'commentId': '',
-            'replyToCommentUserId': ''
+            'reply_to_user_id': '',
+            'parent_reply_id': ''
         }
         res = requests.post(url=self.url, json=data)
         print(res.text)

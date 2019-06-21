@@ -2,13 +2,15 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """评论列表"""
+    """作品详情"""
 
     def setUp(self):
-        self.url = url + "/app/book/comment-list"
+        self.url = url + "/app/book/get-book"
 
     def test_1(self):
-        data = {'book_id': 1559790158063, 'type': 2}
+        data = {
+            'book_id': ''
+        }
         res = requests.get(url=self.url, params=data)
         print(res.text)
         self.assertTrue(u"" in res.text)

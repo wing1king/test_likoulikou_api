@@ -2,16 +2,15 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """评论列表"""
+    """获取评论详情"""
 
     def setUp(self):
-        self.url = url + "/app/book/comment-list"
+        self.url = url + "/app/book/topic-detail"
 
     def test_1(self):
         data = {
             'bookId': '',
-            'type': '',     # 1：精评，2：所有评论
-            'page': ''
+            'topicId': ''
         }
         res = requests.get(url=self.url, params=data)
         print(res.text)

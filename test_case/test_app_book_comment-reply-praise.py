@@ -1,19 +1,16 @@
 from tool.get_token import *
 
+
 class MyTestCase(unittest.TestCase):
-    """评论和回复"""
+    """回复点赞"""
 
     def setUp(self):
-        self.url = url + "/app/book/comment-topic"
+        self.url = url + "/app/book/comment-reply-praise"
 
     def test_1(self):
         data = {
-            'topicId': '',
             'book_id': '',
-            'content': '',
-            'replyToTopicUserId': '',
-            'commentId': '',
-            'replyToCommentUserId': ''
+            'comment_reply_id': ''
         }
         res = requests.post(url=self.url, json=data)
         print(res.text)

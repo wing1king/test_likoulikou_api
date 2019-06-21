@@ -1,21 +1,19 @@
 from tool.get_token import *
 
+
 class MyTestCase(unittest.TestCase):
-    """评论和回复"""
+    """回复列表"""
 
     def setUp(self):
-        self.url = url + "/app/book/comment-topic"
+        self.url = url + "/app/book/comment-reply-list"
 
     def test_1(self):
         data = {
-            'topicId': '',
             'book_id': '',
-            'content': '',
-            'replyToTopicUserId': '',
-            'commentId': '',
-            'replyToCommentUserId': ''
+            'id': '',
+            'page_num': ''
         }
-        res = requests.post(url=self.url, json=data)
+        res = requests.get(url=self.url, params=data)
         print(res.text)
         self.assertTrue(u"" in res.text)
 

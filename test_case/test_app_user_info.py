@@ -2,14 +2,13 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """书本列表"""
+    """"""
 
     def setUp(self):
-        self.url = url + "/app/book/list"
+        self.url = url + "/app/user/info"
 
     def test_1(self):
-        data = {'page_num': '',
-                'page_size': '',
+        data = {'userId': '',
                 'deviceid': '',
                 'channel': '',
                 'from': '', # 1是安卓 2是IOS 3其他
@@ -17,7 +16,7 @@ class MyTestCase(unittest.TestCase):
                 'access_token': '',
                 'access_type': '2',  # 1游客 2用户
                 'sign': ''}
-        res = requests.get(url=self.url, params=data)
+        res = requests.post(url=self.url, json=data)
         print(res.text)
         self.assertTrue(u"" in res.text)
 
