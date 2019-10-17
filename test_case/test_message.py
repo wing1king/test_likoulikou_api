@@ -33,13 +33,14 @@ class MyTestCase(unittest.TestCase):
 	        "page_size": self.page_size
 	        }
         res = requests.post(url= base_url + "/app/message/moment",headers=headers)
+        return res.json()['data'][0]['id']
         print(res.text)
         self.assertTrue(u"success" in res.text)
 
     def test_update_msg(self):
         """更新消息已读"""
         data = {
-	        "msg_id": 1
+	        "msg_id":self.test_moment()
 	        }
         res = requests.post(url= base_url + "/app/message/news",headers=headers,json=data)
         print(res.text)
@@ -60,3 +61,5 @@ class MyTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
