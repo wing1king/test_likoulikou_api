@@ -2,7 +2,7 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """评论书本"""
+    """书本"""
 
     def setUp(self):
         # 70648311677614-怎么办！那个女孩的毛发太旺盛！

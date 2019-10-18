@@ -2,7 +2,7 @@ from tool.get_token import *
 
 
 class MyTestCase(unittest.TestCase):
-    """章节评论"""
+    """对话评论"""
 
     def setUp(self):
         self.page_num = 1

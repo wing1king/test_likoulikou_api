@@ -12,9 +12,10 @@ class MyTestCase(unittest.TestCase):
     def test_report(self):
         """投拆"""
         data = {
-            "book_id": 129337698467840,
-            "user_id": self.user_id,
-            "reason_id": 4
+            "item_id": 129337698467840,
+            "item_type": self.user_id,
+            "reason_id": 4,
+            "content": ""
         }
         res = requests.post(url= base_url + "/app/user/report",headers=headers,json=data)
         print(res.text)
