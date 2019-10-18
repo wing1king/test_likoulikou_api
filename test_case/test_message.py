@@ -34,7 +34,6 @@ class MyTestCase(unittest.TestCase):
 	        }
         res = requests.post(url= base_url + "/app/message/moment",headers=headers)
         return res.json()['data'][0]['id']
-        print(res.text)
         self.assertTrue(u"success" in res.text)
 
     def test_update_msg(self):

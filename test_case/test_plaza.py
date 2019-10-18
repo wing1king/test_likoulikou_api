@@ -19,11 +19,11 @@ class MyTestCase(unittest.TestCase):
             "topic_type": "",
             "background": "",
             "image_width": "",
-            "image height": ""
+            "image_height": ""
         }
         res = requests.post(url=base_url + "/app/plaza/create-topic",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_del_topic(self):
         """删除帖子"""
@@ -33,7 +33,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/del-topic",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_edit_topic(self):
         """编辑帖子"""
@@ -46,95 +46,92 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/edit-topic",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
-    def test_(self):
+    def test_get_plaza_list(self):
         """获取广场帖子列表"""
         data = {
-            "book_id": "",
-            "id": "",
-            "page_num": ""
+            "page_num": self.page_num,
+            "page_size": self.page_size
         }
         res = requests.post(url=base_url + "/app/plaza/get-plaza-list",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
-    def test_(self):
+    def test_get_topic_info(self):
         """获取帖子详情"""
         data = {
-            "book_id": "",
-            "id": "",
-            "page_num": ""
+            "topic_id": ""
         }
         res = requests.post(url=base_url + "/app/plaza/get-topic-info",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
-    def test_(self):
+    def test_get_topic_comment_list(self):
         """获取帖子评论列表"""
         data = {
-            "book_id": "",
-            "id": "",
-            "page_num": ""
+            "topic_id": "",
+            "page_num": self.page_num,
+            "page_size": self.page_size
         }
         res = requests.post(url=base_url + "/app/plaza/get-topic-comment-list",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
-    def test_(self):
+    def test_get_comment_reply_list(self):
         """获取评论回复列表"""
         data = {
-            "book_id": "",
-            "id": "",
-            "page_num": ""
+            "comment_id": "",
+            "page_num": self.page_num,
+            "page_size": self.page_size
         }
         res = requests.post(url=base_url + "/app/plaza/get-comment-reply-list",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
-    def test_(self):
+    def test_del_topic_comment(self):
         """删除帖子评论"""
         data = {
-            "book_id": "",
-            "id": "",
-            "page_num": ""
+            "topic_id": "",
+            "comment_id": ""
         }
         res = requests.post(url=base_url + "/app/plaza/del-topic-comment",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
-    def test_(self):
+    def test_add_topic_comment(self):
         """添加帖子评论"""
         data = {
-            "book_id": "",
-            "id": "",
-            "page_num": ""
+            "topic_id": "",
+            "content": "",
+            "cmt_type": ""
         }
         res = requests.post(url=base_url + "/app/plaza/add-topic-comment",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
-    def test_(self):
+    def test_add_topic_comment_reply(self):
         """添加评论回复"""
         data = {
-            "book_id": "",
-            "id": "",
-            "page_num": ""
+            "comment_id": "",
+            "parent_reply_id": "",
+            "parent_user_id": "",
+            "content": "",
+            "reply_type": ""
         }
         res = requests.post(url=base_url + "/app/plaza/add-topic-comment-reply",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
-    def test_(self):
+    def test_del_comment_reply(self):
         """删除评论回复"""
         data = {
-            "book_id": "",
-            "id": "",
-            "page_num": ""
+            "comment_id": "",
+            "reply_id": ""
         }
         res = requests.post(url=base_url + "/app/plaza/del-comment-reply",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_add_topic_praise(self):
         """点赞帖子"""
@@ -143,7 +140,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/add-topic-praise",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_del_topic_praise(self):
         """取消帖子点赞"""
@@ -152,7 +149,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/del-topic-praise",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_add_topic_comment_praise(self):
         """点赞评论"""
@@ -161,7 +158,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/add-topic-comment-praise",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_del_topic_comment_praise(self):
         """取消评论点赞"""
@@ -170,7 +167,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/del-topic-comment-praise",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_add_topic_comment_reply_praise(self):
         """点赞回复"""
@@ -179,7 +176,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/add-topic-comment-reply-praise",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_del_topic_comment_reply_praise(self):
         """取消回复点赞"""
@@ -188,7 +185,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/del-topic-comment-reply-praise",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_get_exquisite_comment(self):
         """获取精品评论"""
@@ -199,7 +196,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/get-exquisite-comment",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_get_book_link_topic_list(self):
         """获取书本关联帖子列表"""
@@ -210,7 +207,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/get-book-link-topic-list",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_get_user_topics(self):
         """获取用户帖子"""
@@ -221,7 +218,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/plaza/get-user-topics",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def tearDown(self):
         time.sleep(1)
