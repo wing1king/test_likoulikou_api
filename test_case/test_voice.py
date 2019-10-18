@@ -14,7 +14,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/voice/get-rooms",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_get_room(self):
         """获取房间"""
@@ -23,7 +23,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/voice/get-room",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_add_room(self):
         """添加房间"""
@@ -50,7 +50,7 @@ class MyTestCase(unittest.TestCase):
 	    }
         res = requests.post(url=base_url + "/app/voice/add-room",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_edit_room(self):
         """修改房间"""
@@ -63,7 +63,7 @@ class MyTestCase(unittest.TestCase):
 	    }
         res = requests.post(url=base_url + "/app/voice/edit-room",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_add_character(self):
         """添加角色"""
@@ -74,7 +74,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/voice/add-character",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_edit_character(self):
         """修改角色"""
@@ -93,7 +93,7 @@ class MyTestCase(unittest.TestCase):
 	}
         res = requests.post(url=base_url + "/app/voice/edit-character",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_add_script(self):
         """添加剧本"""
@@ -109,7 +109,7 @@ class MyTestCase(unittest.TestCase):
 	}
         res = requests.post(url=base_url + "/app/voice/add-script",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_add_line(self):
         """添加对白"""
@@ -125,7 +125,7 @@ class MyTestCase(unittest.TestCase):
 	}
         res = requests.post(url=base_url + "/app/voice/add-line",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_edit_room1(self):
         """获取所有房间列表"""
@@ -134,7 +134,7 @@ class MyTestCase(unittest.TestCase):
         }
         res = requests.post(url=base_url + "/app/voice/edit-room",headers=headers,json=data)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def tearDown(self):
         time.sleep(1)

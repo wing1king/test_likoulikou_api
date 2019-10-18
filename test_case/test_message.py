@@ -33,6 +33,7 @@ class MyTestCase(unittest.TestCase):
 	        "page_size": self.page_size
 	        }
         res = requests.post(url= base_url + "/app/message/moment",headers=headers)
+        print(res.text)
         return res.json()['data'][0]['id']
         self.assertTrue(u"success" in res.text)
 

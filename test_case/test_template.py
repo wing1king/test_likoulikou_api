@@ -11,19 +11,19 @@ class MyTestCase(unittest.TestCase):
         """书籍单元"""
         res = requests.post(url=base_url + "/app/book/tile",headers=headers)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_comment_tile(self):
         """评论单元"""
         res = requests.post(url=base_url + "/app/comment/tile",headers=headers)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def test_reply_tile(self):
         """回复单元"""
         res = requests.post(url=base_url + "/app/reply/tile",headers=headers)
         print(res.text)
-        self.assertTrue(u"" in res.text)
+        self.assertTrue(u"success" in res.text)
 
     def tearDown(self):
         time.sleep(1)

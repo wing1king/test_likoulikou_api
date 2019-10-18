@@ -7,7 +7,7 @@ class MyTestCase(unittest.TestCase):
     def setUp(self):
         self.page_num = 1
         self.page_size = 5
-        self.user_id = ""
+        self.user_id = 2376851868 # 印悦
 
     def test_comment_list(self):
         """获取章节评论列表"""
