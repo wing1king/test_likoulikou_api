@@ -4,9 +4,9 @@ import unittest
 import time
 import json
 # 测试环境
-# base_url = "http://119.29.1.133"
+base_url = "http://119.29.1.133"
 # 开发环境
-base_url = "http://10.72.17.30"
+# base_url = "http://10.72.17.30"
 # 预发布环境
 # base_url: https://sandbox-riko-xms.uu.cc
 # 正式环境

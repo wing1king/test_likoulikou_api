@@ -70,7 +70,7 @@ class MyTestCase(unittest.TestCase):
     def test_audit(self):
         """书本提审"""
         data = {
-            "book_id": 132588514115584
+            "book_id": 133354542587904
         }
         res = requests.post(url=base_url + "/app/editor/audit", headers=headers, json=data)
         print(res.text)
