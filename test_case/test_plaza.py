@@ -1,6 +1,5 @@
 from tool.get_token import *
 
-
 class MyTestCase(unittest.TestCase):
     """广场帖子"""
 

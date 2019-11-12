@@ -25,6 +25,24 @@ class MyTestCase(unittest.TestCase):
         print(res.text)
         self.assertTrue(u"success" in res.text)
 
+    def test_tile(self):
+        """帖子单元"""
+        res = requests.get(url=base_url + "/app/topic/tile",headers=headers)
+        print(res.text)
+        self.assertTrue(u"success" in res.text)
+
+    def test_moment(self):
+        """动态单元"""
+        res = requests.post(url=base_url + "/app/message/moment",headers=headers)
+        print(res.text)
+        self.assertTrue(u"success" in res.text)
+
+    def test_asset_tile(self):
+        """素材单元"""
+        res = requests.post(url=base_url + "/app/asset/tile",headers=headers)
+        print(res.text)
+        self.assertTrue(u"success" in res.text)
+
     def tearDown(self):
         time.sleep(1)
 
