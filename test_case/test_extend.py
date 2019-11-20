@@ -1,16 +1,18 @@
 from tool.get_token import *
 
+
 class MyTestCase(unittest.TestCase):
     """打赏"""
-    def Setup(self):
+    def setUp(self):
         self.user_id = 99999999999
-        self.activity_id = ""
+        self.activity_id = 133796910956544
         self.user_mobile = ""
+        self.act_key = "ActivityDRJL"
 
     def test_get_activity(self):
         """获取活动"""
         data = {
-            "act_key": "",
+            "act_key": self.act_key,
         }
         res = requests.post(url=base_url + "/app/extend/get-activity",headers=headers,json=data)
         print(res.text)
@@ -19,7 +21,7 @@ class MyTestCase(unittest.TestCase):
     def test_get_user_data(self):
         """获取用户活动数据"""
         data = {
-            "activity_id": "",
+            "activity_id": self.act_key,
         }
         res = requests.post(url=base_url + "/app/extend/get-user-data",headers=headers,json=data)
         print(res.text)
